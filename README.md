@@ -1,16 +1,3 @@
-# lab_2
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+First Question             | Second Question           | Success message with try again
+:-------------------------:|:-------------------------:| :------------------------
+<img height="600" src="https://user-images.githubusercontent.com/75941337/217046746-c0ffb4f8-b4ce-4102-ba70-27cbb300f72c.png">  |  <img height="600" src="https://user-images.githubusercontent.com/75941337/217046751-a25cd830-8b0b-486b-9927-185f8078f661.png">   |.  <img height="600" src="https://user-images.githubusercontent.com/75941337/217046753-2713d724-1d87-4a9e-8a4b-131cfcfd23c2.png">
