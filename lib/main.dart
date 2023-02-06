@@ -47,9 +47,22 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   var _currQuestionIndex = 0;
 
-  void _pressButton() {
+  String _successMessage = "";
+
+  void _nextQuestion() {
     setState(() {
-      if (_currQuestionIndex < questions.length - 1) _currQuestionIndex++;
+      if (_currQuestionIndex < questions.length - 1) {
+        _currQuestionIndex++;
+      } else {
+        _successMessage = "Successfully chosen!";
+      }
+    });
+  }
+
+  void _resetQuesions() {
+    setState(() {
+      _currQuestionIndex = 0;
+      _successMessage = "";
     });
   }
 
@@ -64,10 +77,28 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ClothesQuestion(
-                questions[_currQuestionIndex]['question'] as String),
-            ...(questions[_currQuestionIndex]['answers'] as List<String>)
-                .map((answer) => ClothesAnswer(_pressButton, answer)),
+            if (_successMessage == "")
+              ClothesQuestion(
+                  questions[_currQuestionIndex]['question'] as String),
+            if (_successMessage == "")
+              ...(questions[_currQuestionIndex]['answers'] as List<String>)
+                  .map((answer) => ClothesAnswer(_nextQuestion, answer)),
+            if (_successMessage != "")
+              Text(
+                _successMessage,
+                style: const TextStyle(
+                  fontSize: 30,
+                  color: Colors.green,
+                ),
+              ),
+            if (_successMessage != "")
+              Container(
+                margin: EdgeInsets.all(20),
+                child: ElevatedButton(
+                  onPressed: _resetQuesions,
+                  child: const Text('Try Again'),
+                ),
+              )
           ],
         ),
       ),
